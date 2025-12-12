@@ -1,9 +1,9 @@
 from django.urls import path
-from .views import get_users, create_user, update_user, delete_user
+from .views import list_users, create_user, update_user_partial, delete_user
 
 urlpatterns = [
-    path('list/', get_users),
-    path('create/', create_user),
-    path('update/<int:id>/', update_user),
-    path('delete/<int:id>/', delete_user),
+    path("", list_users, name="list_users"),                 # GET /users/
+    path("create/", create_user, name="create_user"),        # POST /users/create/
+    path("<int:pk>/", update_user_partial, name="update_user_partial"), # PATCH /users/<id>/
+    path("<int:pk>/delete/", delete_user, name="delete_user"),         # DELETE /users/<id>/delete/
 ]
