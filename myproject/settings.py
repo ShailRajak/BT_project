@@ -22,7 +22,7 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 ALLOWED_HOSTS = ['btproject-production.up.railway.app']
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://btproject-production.up.railway.app',
+    'https://btproject-production.up.railway.app'
 ]
 
 INSTALLED_APPS = [
