@@ -6,5 +6,8 @@ class User(models.Model):
     age = models.PositiveIntegerField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering = ['id']   # ascending: 1, 2, 3, 4, 5
+
     def __str__(self):
         return f"{self.name} <{self.email}>"
