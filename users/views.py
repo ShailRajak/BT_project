@@ -10,7 +10,7 @@ from django.shortcuts import get_object_or_404
 
 @api_view(["GET"])
 def list_users(request):
-    users = User.objects.all().order_by("-created_at")
+    users = User.objects.all().order_by("created_at")
     serializer = UserSerializer(users, many=True)
     return Response(serializer.data)
 
